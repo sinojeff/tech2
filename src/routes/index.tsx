@@ -41,14 +41,19 @@ const sectors = [
 function Index() {
   return (
     <Page>
-      <section className="max-w-3xl">
+      <section className="relative max-w-3xl">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-32 -left-32 size-[480px] rounded-full opacity-40 blur-3xl"
+          style={{ background: "radial-gradient(circle, var(--color-accent), transparent 60%)", animation: "pulseGlow 6s ease-in-out infinite" }}
+        />
         <Eyebrow>AI · Software · Analytics</Eyebrow>
-        <h1 className="text-5xl sm:text-7xl leading-[1.05]">Solving the unsolved.</h1>
-        <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+        <h1 className="text-5xl sm:text-7xl text-balance gradient-text">Solving the unsolved.</h1>
+        <p className="mt-8 text-lg text-muted-foreground leading-relaxed text-balance">
           Techions is a tech problem-solving partner for the challenges average teams cannot crack. We thrive on complexity — and turn it into shipped product, durable IP, and measurable outcomes.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/contact" className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition">
+          <Link to="/contact" className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition glow-ring">
             Bring us a hard problem
           </Link>
           <Link to="/services" className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm hover:bg-muted transition">
