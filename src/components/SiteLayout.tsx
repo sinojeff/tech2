@@ -1,5 +1,6 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -11,12 +12,13 @@ const nav = [
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <header className="border-b border-border/60 bg-background/80 backdrop-blur sticky top-0 z-40">
+    <header className="sticky top-0 z-40 border-b border-border/60 surface">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-xl tracking-tight">
-          Techions<span className="text-accent">.</span>
+        <Link to="/" className="font-display text-lg font-semibold tracking-tight flex items-center gap-2">
+          <span className="size-2 rounded-full bg-accent" style={{ boxShadow: "0 0 12px var(--color-accent)" }} />
+          Techions
         </Link>
-        <nav className="flex items-center gap-7 text-sm">
+        <nav className="hidden sm:flex items-center gap-7 text-sm">
           {nav.map((n) => {
             const active = pathname === n.to;
             return (
@@ -30,6 +32,7 @@ export function SiteHeader() {
             );
           })}
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );
