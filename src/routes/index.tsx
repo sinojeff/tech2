@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Page, Eyebrow } from "@/components/SiteLayout";
+import heroBg from "@/assets/hero-bg.jpg";
+import sectionBg from "@/assets/section-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
