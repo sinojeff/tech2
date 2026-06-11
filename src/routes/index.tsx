@@ -43,24 +43,34 @@ const sectors = [
 function Index() {
   return (
     <Page>
-      <section className="relative max-w-3xl">
+      <section className="relative">
         <div
           aria-hidden
-          className="pointer-events-none absolute -top-32 -left-32 size-[480px] rounded-full opacity-40 blur-3xl"
-          style={{ background: "radial-gradient(circle, var(--color-accent), transparent 60%)", animation: "pulseGlow 6s ease-in-out infinite" }}
+          className="pointer-events-none absolute -top-32 -bottom-16 opacity-40"
+          style={{
+            left: "calc(50% - 50vw)",
+            right: "calc(50% - 50vw)",
+            backgroundImage: `radial-gradient(ellipse at 70% 40%, color-mix(in oklab, var(--color-accent) 30%, transparent), transparent 60%), url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            maskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+            WebkitMaskImage: "radial-gradient(ellipse at center, black 40%, transparent 85%)",
+          }}
         />
-        <Eyebrow>AI · Software · Analytics</Eyebrow>
-        <h1 className="text-5xl sm:text-7xl text-balance gradient-text">Solving the unsolved.</h1>
-        <p className="mt-8 text-lg text-muted-foreground leading-relaxed text-balance">
-          Techions is a tech problem-solving partner for the challenges average teams cannot crack. We thrive on complexity — and turn it into shipped product, durable IP, and measurable outcomes.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/contact" className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition glow-ring">
-            Bring us a hard problem
-          </Link>
-          <Link to="/services" className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm hover:bg-muted transition">
-            Explore services
-          </Link>
+        <div className="relative max-w-3xl">
+          <Eyebrow>AI · Energy · Healthcare · Deep Tech</Eyebrow>
+          <h1 className="text-5xl sm:text-7xl text-balance gradient-text">Solving the unsolved.</h1>
+          <p className="mt-8 text-lg text-muted-foreground leading-relaxed text-balance">
+            Techions is a tech problem-solving partner for the challenges average teams cannot crack. We thrive on complexity — and turn it into shipped product, durable IP, and measurable outcomes.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Link to="/contact" className="inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm hover:opacity-90 transition glow-ring">
+              Bring us a hard problem
+            </Link>
+            <Link to="/services" className="inline-flex items-center rounded-full border border-border px-5 py-2.5 text-sm hover:bg-muted transition">
+              Explore services
+            </Link>
+          </div>
         </div>
       </section>
 
