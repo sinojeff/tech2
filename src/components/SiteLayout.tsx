@@ -1,6 +1,7 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import techionsLogo from "@/assets/techions-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
