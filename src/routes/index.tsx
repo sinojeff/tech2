@@ -83,14 +83,16 @@ function Index() {
         ))}
       </section>
 
-      <section className="mt-28">
+      <section className="mt-28 relative">
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 opacity-20 rounded-2xl overflow-hidden"
+          style={{ backgroundImage: `url(${sectionBg})`, backgroundSize: "cover", backgroundPosition: "left center" }} />
         <h2 className="text-3xl sm:text-4xl">What we excel at</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
           We deliver solutions for any problem that touches software and analytics — from greenfield product builds to deep research that becomes intellectual property.
         </p>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
           {services.map(([t, d]) => (
-            <div key={t} className="bg-background p-7">
+            <div key={t} className="bg-background/80 backdrop-blur p-7">
               <h3 className="text-xl mb-2">{t}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
             </div>
@@ -98,7 +100,9 @@ function Index() {
         </div>
       </section>
 
-      <section className="mt-28">
+      <section className="mt-28 relative">
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 opacity-20 rounded-2xl overflow-hidden"
+          style={{ backgroundImage: `url(${sectionBg})`, backgroundSize: "cover", backgroundPosition: "right center", transform: "scaleX(-1)" }} />
         <Eyebrow>Cross-domain mastery</Eyebrow>
         <h2 className="text-3xl sm:text-4xl">Core sectors we serve</h2>
         <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -106,7 +110,7 @@ function Index() {
         </p>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-xl overflow-hidden">
           {sectors.map(([t, d]) => (
-            <div key={t} className="bg-background p-7">
+            <div key={t} className="bg-background/80 backdrop-blur p-7">
               <h3 className="text-xl mb-2">{t}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{d}</p>
             </div>
@@ -114,7 +118,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="mt-28 rounded-2xl bg-primary text-primary-foreground p-10 sm:p-14">
+      <section className="mt-28 relative rounded-2xl overflow-hidden p-10 sm:p-14 text-primary-foreground" style={{ background: `linear-gradient(120deg, color-mix(in oklab, var(--color-primary) 92%, transparent), color-mix(in oklab, var(--color-primary) 70%, transparent)), url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}>
         <h2 className="text-3xl sm:text-4xl max-w-2xl">Have a problem no one else can solve?</h2>
         <p className="mt-4 opacity-80 max-w-xl">We're not the cheapest. We're the team you call when the answer matters.</p>
         <Link to="/contact" className="mt-8 inline-flex items-center rounded-full bg-background text-foreground px-5 py-2.5 text-sm hover:opacity-90 transition">
