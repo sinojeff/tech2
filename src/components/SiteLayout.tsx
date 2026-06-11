@@ -1,6 +1,7 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ThemeToggle } from "./ThemeToggle";
+import techionsLogo from "@/assets/techions-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,9 +15,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 surface">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-lg font-semibold tracking-tight flex items-center gap-2">
-          <span className="size-2 rounded-full bg-accent" style={{ boxShadow: "0 0 12px var(--color-accent)" }} />
-          Techions
+        <Link to="/" className="flex items-center" aria-label="Techions home">
+          <img src={techionsLogo.url} alt="Techions" className="h-8 w-auto" />
         </Link>
         <nav className="hidden sm:flex items-center gap-7 text-sm">
           {nav.map((n) => {
